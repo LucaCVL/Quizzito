@@ -1,0 +1,95 @@
+
+/* Initial */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u,
+i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table,
+caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details,
+embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video 
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+	body {line-height: 1;}
+        ol, ul {list-style: none;}
+	blockquote, q {quotes: none;}
+        blockquote:before, blockquote:after, q:before, q:after {content: '';content: none;}
+	table {border-collapse: collapse;border-spacing: 0;}
+	body {-webkit-text-size-adjust: none;}
+
+
+
+/* Fond + police classique */
+
+	body {background-color: #510E2E;color: #666666;}
+	body, input, select, textarea {
+                font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-size: 19pt;
+		font-weight: 200;
+		line-height: 1.65; }
+
+
+/*Carré Blanc*/
+
+#intro {
+		padding: 4em 4em 2em 4em;
+		background-color: pink;
+		border-radius: 4px;
+		text-align : center;
+		}
+
+		@media screen and (max-width: 736px) {
+			#intro {padding: 2em 2em 0.1em 2em;} }
+		@media screen and (max-width: 480px) {
+			#intro {padding: 2em 1em 0.1em 1em;}
+				#intro p br {display: none;} }
+				
+/* Boutons */
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="bouton"],
+	bouton,
+
+	.bouton {
+        color: #494949 !important;
+        text-transform: uppercase;
+         text-decoration: none;
+         background: #ffffff;
+         padding: 10px;
+         border: 2px solid #494949 !important;
+         display: inline-block;
+         transition: all 0.4s ease 0s; }
+
+         .bouton:hover {
+         color: #ffffff !important;
+         background:#000000;
+         border-color:#000000 !important;
+         transition: all 0.4s ease 0s; }
+         
+         
+	/*Espacement Marge*/
+	
+	#espacement {
+	width: 64em;
+	margin: 0 auto;
+	max-width: calc(100% - 4em);
+	padding: 4em 0 2em 0; }
+
+		#espacement > .main {margin-bottom: 4em;}
+
+		@media screen and (max-width: 980px) {
+			#wrapper {padding: 2em 0 2em 0;}
+                        #wrapper > .main {margin-bottom: 2em;} }
+
+		@media screen and (max-width: 736px) {
+		#espacement {max-width: calc(100% - 2em);padding: 1em 0 0.1em 0;}
+				#espacement > .main {margin-bottom: 1em;} }				
