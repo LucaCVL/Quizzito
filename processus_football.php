@@ -3,18 +3,20 @@
 
 
 <?php 
+$nombre_question = $_SESSION['nombre_question'];
+$question_id = $_SESSION['question_id'];
+
 
 /* Checking if the score is set. If it is not, it sets it to 0. */
-if (!isset($_SESSION['score'])) {
+if ($nombre_question == 1 ) {
 	$_SESSION['score'] = 0;
 }
 
-if ($_POST) {
+if (isset($_POST['submit'])) {
+
 
 	
 
-	$nombre_question = $_SESSION['nombre_question'];
-	$question_id = $_SESSION['question_id'];
 	
 	$reponse_choisi = $_POST['answer'];
 
@@ -28,13 +30,13 @@ if ($_POST) {
 	$query = "SELECT * FROM `QUESTION_CHOIX` WHERE QUESTION_ID = '$question_id' AND BONNE = 1";
 	
     /* Executing the query. */
-    $result = $db->query($query);
+    	$result = $db->query($query);
 	
     /* Fetching the result of the query. */
-    $row = $result->fetch(PDO::FETCH_ASSOC);
+    	$row = $result->fetch(PDO::FETCH_ASSOC);
 	
     /* Getting the ID of the correct answer. */
-    $bonne_reponse = $row['ID'];
+    	$bonne_reponse = $row['REPONSE'];
 	
 	echo $bonne_reponse;
 

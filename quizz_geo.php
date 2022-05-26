@@ -60,8 +60,7 @@ if ($nombre_question == 1 ) {
 	 <?php while($reponse = $requete_reponse->fetch(PDO::FETCH_ASSOC))
 	{ ?>
 	<li>
-          <input type="radio" name="answer" id="b" class="answer">
-          <label for="b" id="b_text"><?php echo $reponse['REPONSE']; ?> </label>
+          <input type="radio" name="reponse" value='<?php echo $reponse['REPONSE']; ?>'  /> <label> <?php echo $reponse['REPONSE']; ?> </label> 
         </li>
  
 

@@ -13,7 +13,7 @@ if ($nombre_question == 1 ) {
 	$_SESSION['score'] = 0;
 }
 
-if ($_POST) {
+if (isset($_POST['submit'])) {
 
 	$reponse_choisi = $_POST["answer"];
 
@@ -33,7 +33,7 @@ if ($_POST) {
     $row = $result->fetch(PDO::FETCH_ASSOC);
 	
     #Getting the ID of the correct answer.
-    $bonne_reponse = $row['ID'];
+    $bonne_reponse = $row['REPONSE'];
 	
 
  #Checking if the answer is correct and if it is, it adds 1 to the score.

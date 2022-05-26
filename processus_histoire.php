@@ -4,19 +4,22 @@
 
 <?php 
 
+$nombre_question = $_SESSION['nombre_question'];
+$question_id = $_SESSION['question_id'];
+	
+
+
 /* Checking if the score is set and if it is not, it sets it to 0. */
-if (!isset($_SESSION['score'])) {
+if ($nombre_question == 1 ) {
 	$_SESSION['score'] = 0;
 }
 
-if ($_POST) {
+if (isset($_POST['submit'])) {
 
 	
 
-	$nombre_question = $_SESSION['nombre_question'];
-	$question_id = $_SESSION['question_id'];
 	
-	$reponse_choisi = $_POST['answer'];
+	$reponse_choisi = $_POST['reponse'];
 
 	$prochaine_question = $nombre_question + 1;
 	
@@ -25,16 +28,16 @@ if ($_POST) {
 
 
 	/* Selecting the correct answer from the database. */
-    $query = "SELECT * FROM `QUESTION_CHOIX` WHERE QUESTION_ID = '$question_id' AND BONNE = 1";
+    	$query = "SELECT * FROM `QUESTION_CHOIX` WHERE QUESTION_ID = '$question_id' AND BONNE = 1";
 	
     /* Executing the query. */
-    $result = $db->query($query);
+    	$result = $db->query($query);
 	
     /* Fetching the result of the query and putting it in an array. */
-    $row = $result->fetch(PDO::FETCH_ASSOC);
+    	$row = $result->fetch(PDO::FETCH_ASSOC);
 	
     /* Getting the ID of the correct answer. */
-    $bonne_reponse = $row['ID'];
+    	$bonne_reponse = $row['REPONSE'];
 	
 
 	/* Checking if the answer is correct and if it is, it adds 1 to the score. */
@@ -51,12 +54,9 @@ if ($_POST) {
 	} 
 
 	/* Redirecting the user to the next question. */
-    else {
+    	else {
 	header("Location: quizz_histoire.php?n=".$prochaine_question);
 	}
 }
-
-
-
 
 ?>
