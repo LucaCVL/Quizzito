@@ -79,3 +79,7 @@ if ($nombre_question == 1 ) {
   
 </body>
 </html>
+
+<SCRIPT LANGUAGE="JavaScript">
+history.forward()
+</SCRIPT>
