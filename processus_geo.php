@@ -15,7 +15,7 @@ if ($nombre_question == 1 ) {
 
 if (isset($_POST['submit'])) {
 
-	$reponse_choisi = $_POST["answer"];
+	$reponse_choisi = $_POST["reponse"];
 
 	$prochaine_question = $nombre_question + 1;
 	
